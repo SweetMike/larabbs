@@ -1398,7 +1398,7 @@ th {
 
 html {
   font-size: 10px;
-  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 body {
@@ -7884,7 +7884,7 @@ button.close {
   color: #fff;
   text-align: center;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
-  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0);
 }
 
 .carousel-control.left {
@@ -7973,7 +7973,7 @@ button.close {
   border-radius: 10px;
   cursor: pointer;
   background-color: #000 \9;
-  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0);
 }
 
 .carousel-indicators .active {
@@ -8999,5 +8999,22 @@ body {
 
 .notifications-badge .badge-hint {
   background-color: #d15b47 !important;
+}
+
+/* Sidebar */
+
+.sidebar .panel-body {
+  padding: 12px;
+}
+
+.sidebar hr {
+  margin-top: 8px;
+  margin-bottom: 10px;
+}
+
+.sidebar .active-users a.media {
+  color: #797878;
+  line-height: 26px;
+  font-size: 0.9em;
 }
 
