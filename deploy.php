@@ -22,7 +22,7 @@ add('writable_dirs', []);
 
 // Hosts
 
-host('project.com')
+host('119.29.129.88')
     ->user('deployer')
     ->identityFile('~/.ssh/deployerkey')
     ->set('deploy_path', '/var/www/larabbs');
