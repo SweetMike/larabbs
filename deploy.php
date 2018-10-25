@@ -4,7 +4,7 @@ namespace Deployer;
 require 'recipe/laravel.php';
 
 // Project name
-set('application', '/home/ubuntu/app/larabbs');
+set('application', 'my_project');
 
 // Project repository
 set('repository', 'git@github.com:TwlSweet/larabbs.git');
@@ -22,11 +22,10 @@ add('writable_dirs', []);
 
 // Hosts
 
-host('119.29.129.88')
-    ->user('deployer') // 这里填写 deployer 
-      // 并指定公钥的位置
+host('project.com')
+    ->user('deployer')
     ->identityFile('~/.ssh/deployerkey')
-    ->set('deploy_path', '{{application}}');
+    ->set('deploy_path', '/var/www/larabbs');
     
 // Tasks
 
