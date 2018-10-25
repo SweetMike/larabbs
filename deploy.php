@@ -26,12 +26,25 @@ host('119.29.129.88')
     ->user('deployer')
     ->identityFile('~/.ssh/deployerkey')
     ->set('deploy_path', '/var/www/larabbs');
-    
-// Tasks
 
-task('build', function () {
-    run('cd {{release_path}} && build');
-});
+desc('Deploy your project');
+task('deploy', [
+    'deploy:info',
+    'deploy:prepare',
+    'deploy:lock',
+    'deploy:release',
+    'deploy:update_code',
+    'deploy:shared',
+    'deploy:vendors',
+    'deploy:writable',
+    'artisan:storage:link',
+    'artisan:view:clear',
+    // 'artisan:config:cache',
+    'artisan:optimize',
+    'deploy:symlink',
+    'deploy:unlock',
+    'cleanup',
+]);
 
 // [Optional] if deploy fails automatically unlock.
 after('deploy:failed', 'deploy:unlock');
